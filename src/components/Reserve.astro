@@ -2,10 +2,37 @@
 ---
 
 <section class="section">
-  
+  <div class="inner">
+    <div class="section-title">
+      <h2 class="title">ご予約</h2>
+    </div>
+    <div class="container">
+      <a href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" class="button">ご予約はこちら</a>
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .button {
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 50px;
+    border: 1px solid $subtx-c;
+    text-align: center;
+    transition: letter-spacing 0.3s ease;
+  }
+
+  .button:hover {
+    letter-spacing: 0.15em;
+  }
 </style>

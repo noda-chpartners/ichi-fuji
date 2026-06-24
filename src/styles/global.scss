@@ -6,6 +6,12 @@ html {
 }
 
 body {
+  background-color: $base-c;
+  font-family: "Noto Serif JP", serif;
+  color: $text-c;
+  font-size: 0.9rem;
+  line-height: 2.2;
+  letter-spacing: 0.04em;
   overflow-x: clip;
 }
 
@@ -16,4 +22,19 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+.section {
+  width: 100%;
+  padding: 40px;
+}
+
+.inner {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.12rem;
 }
