@@ -51,5 +51,20 @@
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
 
+  .content-area {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    max-width: 700px;
+    row-gap: 4px;
+    margin: 40px auto 0;
+  }
 
+  .label,
+  .name {
+    padding: 16px 8px;
+  }
+
+  .name {
+    color: $text-c;
+  }
 </style>
