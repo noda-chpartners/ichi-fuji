@@ -1,38 +1,46 @@
 ---
+import { Icon } from 'astro-icon/components';
 ---
 
-<section class="section">
-  <div class="inner">
-    <div class="section-title">
-      <h2 class="title">ご予約</h2>
+<section class="reserve">
+  <a class="reserve-link" href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" target="_blank">
+    <div class="reserve-title">
+      <Icon class="reserve-icon" name="mdi:calendar" />
+      <h2 class="title">ご予約はこちら</h2>
     </div>
-    <div class="container">
-      <a href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" class="button">ご予約はこちら</a>
-    </div>
-  </div>
+  </a>
 </section>
+<!---------------------------- styles --------------------------------->
+
 
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
 
-  .container {
+  .reserve {
+    margin: 0 auto;
+    padding: 10px 5.66%;
+  }
+
+  .reserve-link {
+    padding: 5px 10% 0;
+  }
+
+  .reserve-link:hover {
+    
+  }
+
+  .reserve-title {
     display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
+    min-height: 160px;
+    gap: 2%;
+    background-color: #ffffff;
   }
 
-  .button {
-    display: block;
-    max-width: 400px;
-    width: 100%;
-    padding: 10px 50px;
-    border: 1px solid $subtx-c;
-    text-align: center;
-    transition: letter-spacing 0.3s ease;
-  }
-
-  .button:hover {
-    letter-spacing: 0.15em;
+  .reserve-icon {
+    width: 30px;
+    height: 30px;
   }
 </style>

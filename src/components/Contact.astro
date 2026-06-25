@@ -1,12 +1,14 @@
 ---
+import { Icon } from 'astro-icon/components';
 ---
 
-<section class="section">
-  <div class="inner">
-    <div class="section-title">
-      <h2 class="title">お問い合わせ</h2>
+<section class="contact">
+  <a class="contact-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfxHNysRIBB-dGptKQ9B96wbJuGlSU4warDkklX6_US7WnQXQ/viewform" target="_blank">
+    <div class="contact-title">
+      <Icon class="contact-icon" name="material-symbols-light:mail" />
+      <h2 class="title">お問い合わせはこちら</h2>
     </div>
-  </div>
+  </a>
 </section>
 
 <!---------------------------- styles --------------------------------->
@@ -15,4 +17,31 @@
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .contact {
+    margin: 0 auto;
+    padding: 10px 5.66%;
+  }
+
+  .contact-link {
+    padding: 5px 10% 0;
+  }
+
+  .contact-link:hover {
+
+  }
+
+  .contact-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    gap: 2%;
+    background-color: #ffffff;
+  }
+
+  .contact-icon {
+    width: 30px;
+    height: 30px;
+  }
 </style>
