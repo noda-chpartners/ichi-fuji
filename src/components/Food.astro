@@ -79,8 +79,12 @@ import item2 from '../assets/images/item09.jpg';
     margin-top: 20px;
   }
 
-  .food-img {
+  .food-img-wrap {
     max-width: 700px;
+  }
+
+  .food-img {
+
   }
 
   .food-title {
@@ -94,5 +98,11 @@ import item2 from '../assets/images/item09.jpg';
 
   .view-more {
     margin: 40px auto 0;
+  }
+
+  @include tab4 {
+    .food-description {
+      text-align: left;
+    }
   }
 </style>

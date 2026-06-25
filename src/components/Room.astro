@@ -162,4 +162,38 @@ import item5 from '../assets/images/item01.jpg';
     margin-top: 40px;
   }
 
+  @include tab {
+    .room-item:nth-child(odd),
+    .room-item:nth-child(even) {
+      flex-direction: column;
+    }
+  }
+
+  @include tab2 {
+    .room-item:nth-child(even) .room-title {
+      left: -6%;
+    }
+
+    .room-item:nth-child(odd) .room-title {
+      right: -6%;
+    }
+  }
+
+  @include tab3 {
+    .more-wrap {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .btn {
+      margin: 10px auto;
+    }
+  }
+
+  @include tab4 {
+    .room-description {
+      text-align: left;
+    }
+  }
+
 </style>

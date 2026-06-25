@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+@mixin tab {
+  @media (max-width: $tab) {
+    @content;
+  }
+}
+
+@mixin tab2 {
+  @media (max-width: $tab2) {
+    @content;
+  }
+}
+
+@mixin tab3 {
+  @media (max-width: $tab3) {
+    @content;
+  }
+}
+
+@mixin tab4 {
+  @media (max-width: $tab4) {
+    @content;
+  }
+}
+
+@mixin tab5 {
+  @media (max-width: $tab5) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
+}

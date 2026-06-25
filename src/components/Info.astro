@@ -17,7 +17,9 @@
         住所
       </dt>
       <dd class="name">
-        〒401-0305山梨県南都留郡富士河口湖町大石1473-1
+        〒401-0305
+        <br class="break" />
+        山梨県南都留郡富士河口湖町大石1473-1
       </dd>
       <dt class="label">
         電話番号
@@ -66,5 +68,24 @@
 
   .name {
     color: $text-c;
+  }
+
+  .break {
+    display: none;
+  }
+
+  @include tab5 {
+    .content-area {
+      grid-template-columns: 1fr;
+    }
+
+    .label,
+    .name {
+      padding: 5px 8px;
+    }
+
+    .break {
+      display: block;
+    }
   }
 </style>
