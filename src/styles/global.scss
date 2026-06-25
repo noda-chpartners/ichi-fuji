@@ -39,7 +39,12 @@ img {
 }
 
 .section-title {
+  text-align: center;
   font-size: clamp(0.9rem, 5vw, 1.12rem);
+}
+
+.title {
+  font-weight: 600;
 }
 
 .btn {
@@ -50,4 +55,5 @@ img {
   margin-top: 40px;
   padding: 10px 40px;
   background-color: #ffffff;
+  font-weight: 500;
 }

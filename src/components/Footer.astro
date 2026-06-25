@@ -7,12 +7,13 @@ import Logo from '../assets/images/logo.svg';
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="company-area">
-      <p class="company-name">ICHI 緑</p>
-      <adress class="company-adress">
-        〒401-0305 <br />
-        山梨県南都留郡富士河口湖町大石1473-1
-      </adress>
+      <div class="company-wrap">
+        <p class="company-name">ICHI 緑</p>
+        <adress class="company-adress">
+          〒401-0305 <br />
+          山梨県南都留郡富士河口湖町大石1473-1
+        </adress>
+      </div>
       <ul class="sns-list">
         <li class="sns-item">
           <a class="sns-link" href="https://www.instagram.com/ichi_hotels/" target="_blank">
@@ -25,7 +26,6 @@ import Logo from '../assets/images/logo.svg';
           </a>
         </li>
       </ul>
-    </div>
   </div>
   <a href="" class="footer-logo">
     <Image class="footer-logo-img" src={ Logo } alt="ICHI 緑" />
@@ -41,7 +41,10 @@ import Logo from '../assets/images/logo.svg';
     padding: 40px 5.66%;
   }
 
-  .footer-inner {}
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .sns-list {
     display: flex;
@@ -57,7 +60,7 @@ import Logo from '../assets/images/logo.svg';
     display: flex;
     justify-content: center;
     max-width: 200px;
-    margin: 0 auto;
+    margin: 50px auto 0;
   }
 
   .footer-logo-img {

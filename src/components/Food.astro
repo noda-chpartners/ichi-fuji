@@ -10,19 +10,41 @@ import item2 from '../assets/images/item09.jpg';
     <div class="section-title">
       <h2 class="title">お食事</h2>
     </div>
+    <div class="food-description">
+      <p class="description">
+        旅の時間に、もうひとつの楽しみを。
+      </p>
+      <p class="description">
+        地元の味を囲む夕食と、富士山を望む朝に寄り添う朝食。
+        <br />
+        一棟貸切の空間で、家族や大切な人とゆっくり味わえる食事をご用意しています。
+      </p>
+    </div>
     <div class="content-area">
       <ul class="foods-list">
         <li class="food-item">
           <figure class="food-img-wrap">
-            <Image src={ item1 } alt="" />
+            <Image class="food-img" src={ item1 } alt="" />
           </figure>
-          <h3 class="room-title">ICHIの特別すき焼き</h3>
+          <h3 class="food-title">ICHIの特別すき焼き</h3>
+          <p class="food-text">
+            山梨の名店“紅梅や”と届ける、旅先のごちそう。
+            <br />
+            家族みんなで鍋を囲む、あたたかな夕食時間を。
+          </p>
+          <small class="caution">※事前予約制</small>
         </li>
         <li class="food-item">
           <figure class="food-img-wrap">
-            <Image src={ item2 } alt="" />
+            <Image class="food-img" src={ item2 } alt="" />
           </figure>
-          <h3 class="room-title">ICHIのオリジナル朝食</h3>
+          <h3 class="food-title">ICHIのオリジナル朝食</h3>
+          <p class="food-text">
+            富士山を望む朝に楽しむ、ICHIだけの朝食BOX。
+            <br />
+            ゆっくりと目覚める時間に、やさしく寄り添う朝の味わいを。
+          </p>
+          <small class="caution">※事前予約制</small>
         </li>
       </ul>
       <a href="https://ichi-fuji.jp/food/" class="btn view-more" target="_blank">お食事について詳しく見る</a>
@@ -33,4 +55,43 @@ import item2 from '../assets/images/item09.jpg';
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .food-description {
+    text-align: center;
+  }
+
+  .content-area {
+    margin: 0 auto;
+  }
+
+  .food-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .food-item {
+    margin-top: 20px;
+  }
+
+  .food-img {
+    max-width: 700px;
+  }
+
+  .food-title {
+    margin-top: 16px;
+    font-weight: 600;
+  }
+
+  .food-text {
+    margin-top: 12px;
+  }
+
+  .view-more {
+    margin: 40px auto 0;
+  }
 </style>
