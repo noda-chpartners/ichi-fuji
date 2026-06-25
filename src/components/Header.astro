@@ -14,10 +14,42 @@ import Logo from '../assets/images/logo.svg';
     </h1>
     <nav class="header-nav">
       <ul class="header-nav-list">
-        <li class="header-nav-item"><a href="#concept" class="header-nav-link">コンセプト</a></li>
-        <li class="header-nav-item"><a href="#rooms" class="header-nav-link">客室</a></li>
-        <li class="header-nav-item"><a href="#foods" class="header-nav-link">お食事</a></li>
-        <li class="header-nav-item"><a href="#info" class="header-nav-link">基本情報</a></li>
+        <li class="header-nav-item">
+          <a href="#concept" class="header-nav-link">コンセプト</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#rooms" class="header-nav-link">客室</a></li>
+        <li class="header-nav-item">
+          <a href="#foods" class="header-nav-link">お食事</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#info" class="header-nav-link">基本情報</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <button class="hamburger-btn">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  <div class="drawer" id="drawer">
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li class="drawer-nav-item">
+          <a href="#concept" class="drawer-nav-link">コンセプト</a>
+        </li>
+        <li class="drawer-nav-item">
+          <a href="#rooms" class="drawer-nav-link">客室</a>
+        </li>
+        <li class="drawer-nav-item">
+          <a href="#foods" class="drawer-nav-link">お食事</a>
+        </li>
+        <li class="drawer-nav-item">
+          <a href="#info" class="drawer-nav-link">基本情報</a>
+        </li>
+        <li class="drawer-nav-item">
+          <a href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" class="drawer-nav-link" target="_blank">ご予約</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -29,6 +61,8 @@ import Logo from '../assets/images/logo.svg';
 
   .header {
     position: absolute;
+    display: flex;
+    justify-content: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -36,9 +70,12 @@ import Logo from '../assets/images/logo.svg';
   }
 
   .header-inner {
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     max-width: 1280px;
+    width: 100%;
     padding: 10px 5.66%;
   }
 
@@ -58,11 +95,14 @@ import Logo from '../assets/images/logo.svg';
   }
 
   .header-nav {
-
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .header-nav-list {
     display: flex;
+    gap: 24px;
   }
 
   .header-nav-item {
@@ -73,5 +113,95 @@ import Logo from '../assets/images/logo.svg';
 
   }
 
+  .hamburger-btn {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 9px;
+    right: 10%;
+    width: 56px;
+    height: 56px;
+    gap: 8px;
+    z-index: 100;
+    cursor: pointer;
+  }
 
+  .hamburger-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .is-open .hamburger-line:nth-child(1) {
+    transform: translateY(5px) rotate(20deg);
+  }
+
+  .is-open .hamburger-line:nth-child(2) {
+    transform: translateY(-5px) rotate(-20deg);
+  }
+
+  .drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-c;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .is-open .drawer {
+    transform: translateX(0);
+  }
+
+  .drawer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .drawer-nav-link {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: $text-c;
+  }
+  
+  @include tab3 {
+    .header-nav {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  const header = document.querySelector('.header');
+  const btn = document.querySelector('.hamburger-btn');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = header?.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // メニュー内リンクで閉じる
+  document.querySelectorAll('.drawer-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      header?.classList.remove('is-open');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Escで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      header?.classList.remove('is-open');
+      btn?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
