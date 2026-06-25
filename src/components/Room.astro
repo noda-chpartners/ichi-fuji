@@ -21,6 +21,16 @@ import item5 from '../assets/images/item01.jpg';
     <div class="section-title">
       <h2 class="title">客室</h2>
     </div>
+    <p class="description">
+      富士山を望む古民家を、家族みんなで過ごせる一棟貸切の宿へ。
+    </p>
+    <p class="description">
+      1階には、動物たちと一緒にくつろげる開放的な空間を。
+      2階には、静かに体を休めるための寝室と浴室を。
+    </p>
+    <p class="description">
+      人にも、動物にも、それぞれが心地よく過ごせる場所を整えました。
+    </p>
     <div class="content-area">
       <ul class="room-list">
         <li class="room-item">
@@ -28,18 +38,27 @@ import item5 from '../assets/images/item01.jpg';
             <Image class="room-img" src={ item5 } alt="" />
           </figure>
           <h3 class="room-title">外観</h3>
+          <p class="room-text">
+            富士のふもとに、集う場所。
+          </p>
         </li>
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item1 } alt="" />
           </figure>
           <h3 class="room-title">1階</h3>
+          <p class="room-text">
+            何もしない時間が、心地いい。
+          </p>
         </li>
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item2 } alt="" />
           </figure>
           <h3 class="room-title">2階</h3>
+          <p class="room-text">
+            富士と眠り、富士と目覚める。
+          </p>
         </li>
         <!-- ここから設備なので、あとから独立させる -->
         <li class="room-item">
@@ -47,15 +66,20 @@ import item5 from '../assets/images/item01.jpg';
             <Image class="room-img" src={ item3 } alt="" />
           </figure>
           <h3 class="room-title">ドッグラン</h3>
+          <p class="room-text">風を感じて、のびやかに。</p>
         </li>
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item4 } alt="" />
           </figure>
           <h3 class="room-title">キャットウォーク</h3>
+          <p class="room-text">気ままに過ごす、猫の居場所。</p>
         </li>
       </ul>
-      <a href="https://ichi-fuji.jp/room/" class="view-more">客室について詳しく見る</a>
+      <div class="more-wrap">
+        <a class="btn view-more" href="https://ichi-fuji.jp/room/">客室について詳しく見る</a>
+        <a class="btn inside-map" href="https://ichi-fuji.jp/wp-content/uploads/2025/10/ichi_layout-1.pdf">館内図を見る</a>
+      </div>
     </div>
   </div>
 </section>
