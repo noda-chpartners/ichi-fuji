@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 import Logo from '../assets/images/logo.svg';
@@ -12,6 +13,18 @@ import Logo from '../assets/images/logo.svg';
         〒401-0305 <br />
         山梨県南都留郡富士河口湖町大石1473-1
       </adress>
+      <ul class="sns-list">
+        <li class="sns-item">
+          <a class="sns-link" href="https://www.instagram.com/ichi_hotels/" target="_blank">
+            <Icon class="sns-icon" name="simple-icons:instagram" />
+          </a>
+        </li>
+        <li class="sns-item">
+          <a class="sns-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfxHNysRIBB-dGptKQ9B96wbJuGlSU4warDkklX6_US7WnQXQ/viewform" target="_blank">
+            <Icon class="sns-icon" name="material-symbols:mail-outline" />
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   <a href="" class="footer-logo">
@@ -30,9 +43,21 @@ import Logo from '../assets/images/logo.svg';
 
   .footer-inner {}
 
+  .sns-list {
+    display: flex;
+    gap: 18px;
+  }
+
+  .sns-icon {
+    width: 15px;
+    height: 15px;
+  }
+
   .footer-logo {
     display: flex;
     justify-content: center;
+    max-width: 200px;
+    margin: 0 auto;
   }
 
   .footer-logo-img {

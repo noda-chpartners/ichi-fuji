@@ -1,10 +1,61 @@
 ---
+import { Image } from 'astro:assets';
+
+// 1階写真
+import item1 from '../assets/images/item04.jpg';
+// 2階写真
+import item2 from '../assets/images/item05.jpg';
+
+// 設備
+// ドッグラン写真
+import item3 from '../assets/images/item06.jpg';
+// キャットウォーク写真
+import item4 from '../assets/images/item07.jpg';
+
+// 外観写真
+import item5 from '../assets/images/item01.jpg';
 ---
 
 <section class="section" id="rooms">
   <div class="inner">
     <div class="section-title">
       <h2 class="title">客室</h2>
+    </div>
+    <div class="content-area">
+      <ul class="room-list">
+        <li class="room-item">
+          <figure class="room-img-wrap">
+            <Image class="room-img" src={ item5 } alt="" />
+          </figure>
+          <h3 class="room-title">外観</h3>
+        </li>
+        <li class="room-item">
+          <figure class="room-img-wrap">
+            <Image class="room-img" src={ item1 } alt="" />
+          </figure>
+          <h3 class="room-title">1階</h3>
+        </li>
+        <li class="room-item">
+          <figure class="room-img-wrap">
+            <Image class="room-img" src={ item2 } alt="" />
+          </figure>
+          <h3 class="room-title">2階</h3>
+        </li>
+        <!-- ここから設備なので、あとから独立させる -->
+        <li class="room-item">
+          <figure class="room-img-wrap">
+            <Image class="room-img" src={ item3 } alt="" />
+          </figure>
+          <h3 class="room-title">ドッグラン</h3>
+        </li>
+        <li class="room-item">
+          <figure class="room-img-wrap">
+            <Image class="room-img" src={ item4 } alt="" />
+          </figure>
+          <h3 class="room-title">キャットウォーク</h3>
+        </li>
+      </ul>
+      <a href="https://ichi-fuji.jp/room/" class="view-more">客室について詳しく見る</a>
     </div>
   </div>
 </section>
