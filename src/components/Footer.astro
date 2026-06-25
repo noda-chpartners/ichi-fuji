@@ -1,7 +1,22 @@
 ---
+import { Image } from 'astro:assets';
+
+import Logo from '../assets/images/logo.svg';
 ---
 
 <footer class="footer">
+  <div class="footer-inner">
+    <div class="company-area">
+      <p class="company-name">ICHI 緑</p>
+      <adress class="company-adress">
+        〒401-0305 <br />
+        山梨県南都留郡富士河口湖町大石1473-1
+      </adress>
+    </div>
+  </div>
+  <a href="" class="footer-logo">
+    <Image class="footer-logo-img" src={ Logo } alt="ICHI 緑" />
+  </a>
   <small class="copyright">&copy; 2026  ICHI 緑</small>
 </footer>
 
@@ -13,8 +28,23 @@
     padding: 40px 5.66%;
   }
 
+  .footer-inner {}
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-logo-img {
+    width: 100px;
+    height: 50px;
+  }
+
   .copyright {
     display: flex;
     justify-content: center;
+    border-top: 1px solid $text-c;
+    margin-top: 20px;
+    padding-top: 10px;
   }
 </style>

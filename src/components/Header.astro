@@ -1,11 +1,77 @@
 ---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+
+import Logo from '../assets/images/logo.svg';
 ---
 
 <header class="header">
-
+  <div class="header-inner">
+    <h1 class="header-logo">
+      <a href="/" class="header-logo-link">
+        <Image class="header-logo-img" src={ Logo } alt="ICHI 緑" />
+      </a>
+    </h1>
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li class="header-nav-item"><a href="#concept" class="header-nav-link">コンセプト</a></li>
+        <li class="header-nav-item"><a href="#rooms" class="header-nav-link">客室</a></li>
+        <li class="header-nav-item"><a href="#foods" class="header-nav-link">お食事</a></li>
+        <li class="header-nav-item"><a href="#info" class="header-nav-link">基本情報</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #b0b0b8;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    max-width: 1280px;
+    padding: 10px 5.66%;
+  }
+
+  .header-logo {
+    max-width: 100px;
+    height: 50px;
+  }
+
+  .header-logo-link {
+    display: block;
+  }
+
+  .header-logo-img {
+    max-width: 200px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .header-nav {
+
+  }
+
+  .header-nav-list {
+    display: flex;
+  }
+
+  .header-nav-item {
+
+  }
+
+  .header-nav-link {
+
+  }
+
+
 </style>
