@@ -36,8 +36,8 @@ import item5 from '../assets/images/item01.jpg';
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item5 } alt="" />
+            <h3 class="room-title">外観</h3>
           </figure>
-          <h3 class="room-title">外観</h3>
           <p class="room-text">
             富士のふもとに、集う場所。
           </p>
@@ -45,8 +45,8 @@ import item5 from '../assets/images/item01.jpg';
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item1 } alt="" />
+            <h3 class="room-title">1階</h3>
           </figure>
-          <h3 class="room-title">1階</h3>
           <p class="room-text">
             何もしない時間が、心地いい。
           </p>
@@ -54,8 +54,8 @@ import item5 from '../assets/images/item01.jpg';
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item2 } alt="" />
+            <h3 class="room-title">2階</h3>
           </figure>
-          <h3 class="room-title">2階</h3>
           <p class="room-text">
             富士と眠り、富士と目覚める。
           </p>
@@ -64,15 +64,15 @@ import item5 from '../assets/images/item01.jpg';
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item3 } alt="" />
+            <h3 class="room-title">ドッグラン</h3>
           </figure>
-          <h3 class="room-title">ドッグラン</h3>
           <p class="room-text">風を感じて、のびやかに。</p>
         </li>
         <li class="room-item">
           <figure class="room-img-wrap">
             <Image class="room-img" src={ item4 } alt="" />
+            <h3 class="room-title">キャットウォーク</h3>
           </figure>
-          <h3 class="room-title">キャットウォーク</h3>
           <p class="room-text">気ままに過ごす、猫の居場所。</p>
         </li>
       </ul>
@@ -87,4 +87,61 @@ import item5 from '../assets/images/item01.jpg';
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .room-item {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .room-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .room-item:nth-child(1) .room-img-wrap,
+  .room-item:nth-child(3) .room-img-wrap,
+  .room-item:nth-child(5) .room-img-wrap, {
+    margin-left: -12vw;
+  }
+
+  .room-item:nth-child(2) .room-img-wrap,
+  .room-item:nth-child(4) .room-img-wrap, {
+    margin-right: -12vw;
+  }
+
+  .room-img-wrap {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .room-title {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: -20px;
+    max-width: 150px;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+  }
+
+  .room-item:nth-child(even) .room-title {
+    left: -16%;
+  }
+
+  .room-item:nth-child(odd) .room-title {
+    right: -16%;
+  }
+
+  .room-text {
+    margin: 0 auto;
+  }
+
+  .more-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
 </style>
