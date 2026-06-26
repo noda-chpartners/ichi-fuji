@@ -14,6 +14,7 @@ import item4 from '../assets/images/item07.jpg';
 
 // 外観写真
 import item5 from '../assets/images/item01.jpg';
+import item6 from '../assets/images/item02.jpg';
 ---
 
 <section class="section" id="rooms">
@@ -37,8 +38,9 @@ import item5 from '../assets/images/item01.jpg';
     <div class="content-area">
       <ul class="room-list">
         <li class="room-item">
-          <figure class="room-img-wrap">
-            <Image class="room-img" src={ item5 } alt="" />
+          <figure class="room-img-wrap room-exterior">
+            <Image class="room-img room-night" src={ item5 } alt="" />
+            <Image class="room-img room-day" src={ item6 } alt="" />
             <h3 class="room-title">外観</h3>
           </figure>
           <p class="room-text">
@@ -109,6 +111,18 @@ import item5 from '../assets/images/item01.jpg';
     display: flex;
     align-items: center;
     margin-top: 80px;
+  }
+
+  .room-exterior .room-night {
+    display: none;
+  }
+
+  .room-exterior.is-night .room-day {
+    display: none;
+  }
+
+  .room-exterior.is-night .room-night {
+    display: block;
   }
 
   .room-item:nth-child(even) {
@@ -197,3 +211,11 @@ import item5 from '../assets/images/item01.jpg';
   }
 
 </style>
+
+<script>
+  const hour = new Date().getHours();
+  const isNight = hour >= 18 || hour < 6;
+  if (isNight) {
+    document.querySelector('.room-exterior')?.classList.add('is-night');
+  }
+</script>

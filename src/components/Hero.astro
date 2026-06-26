@@ -1,8 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+
+import hero01 from '../assets/images/item01.jpg';
+import hero02 from '../assets/images/item02.jpg';
 ---
 
 <section class="hero">
-  
+  <Image class="hero-img hero-day" src={ hero01 } alt="" />
+  <Image class="hero-img hero-night" src={ hero02 } alt="" />
 </section>
 
 <style lang="scss">
@@ -10,8 +15,36 @@
   @use '../styles/mixins' as *;
 
   .hero {
-    min-height: 100svh;
+    position: relative;
     width: 100%;
-    background-color: rgb(70, 95, 95); // 仮
+    height: 100svh;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-night {
+    display: none;
+  }
+
+  .hero.is-night .hero-day {
+    display: none;
+  }
+
+  .hero.is-night .hero-night {
+    display: block;
   }
 </style>
+
+<script>
+  const hour = new Date().getHours();
+  const isNight = hour >= 18 || hour < 6;
+  if (isNight) {
+    document.querySelector('.hero')?.classList.add('is-night');
+  }
+</script>
