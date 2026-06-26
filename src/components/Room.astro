@@ -19,10 +19,10 @@ import item6 from '../assets/images/item02.jpg';
 
 <section class="section" id="rooms">
   <div class="inner">
-    <div class="section-title">
+    <div class="section-title" data-fade>
       <h2 class="title">客室</h2>
     </div>
-    <div class="room-description">
+    <div class="room-description" data-fade>
       <p class="description">
         富士山を望む古民家を、家族みんなで過ごせる一棟貸切の宿へ。
       </p>
@@ -37,28 +37,28 @@ import item6 from '../assets/images/item02.jpg';
     </div>
     <div class="content-area">
       <ul class="room-list">
-        <li class="room-item">
+        <li class="room-item" data-fade>
           <figure class="room-img-wrap room-exterior">
-            <Image class="room-img room-night" src={ item5 } alt="" />
-            <Image class="room-img room-day" src={ item6 } alt="" />
+            <Image class="room-img room-night" src={ item5 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
+            <Image class="room-img room-day" src={ item6 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
             <h3 class="room-title">外観</h3>
           </figure>
           <p class="room-text">
             富士のふもとに、集う場所。
           </p>
         </li>
-        <li class="room-item">
+        <li class="room-item" data-fade>
           <figure class="room-img-wrap">
-            <Image class="room-img" src={ item1 } alt="" />
+            <Image class="room-img" src={ item1 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
             <h3 class="room-title">1階</h3>
           </figure>
           <p class="room-text">
             何もしない時間が、心地いい。
           </p>
         </li>
-        <li class="room-item">
+        <li class="room-item" data-fade>
           <figure class="room-img-wrap">
-            <Image class="room-img" src={ item2 } alt="" />
+            <Image class="room-img" src={ item2 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
             <h3 class="room-title">2階</h3>
           </figure>
           <p class="room-text">
@@ -66,22 +66,22 @@ import item6 from '../assets/images/item02.jpg';
           </p>
         </li>
         <!-- ここから設備なので、あとから独立させる -->
-        <li class="room-item">
+        <li class="room-item" data-fade>
           <figure class="room-img-wrap">
-            <Image class="room-img" src={ item3 } alt="" />
+            <Image class="room-img" src={ item3 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
             <h3 class="room-title">ドッグラン</h3>
           </figure>
           <p class="room-text">風を感じて、のびやかに。</p>
         </li>
-        <li class="room-item">
+        <li class="room-item" data-fade>
           <figure class="room-img-wrap">
-            <Image class="room-img" src={ item4 } alt="" />
+            <Image class="room-img" src={ item4 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
             <h3 class="room-title">キャットウォーク</h3>
           </figure>
           <p class="room-text">気ままに過ごす、猫の居場所。</p>
         </li>
       </ul>
-      <div class="more-wrap">
+      <div class="more-wrap" data-fade>
         <a class="btn view-more" href="https://ichi-fuji.jp/room/">客室について詳しく見る</a>
         <a class="btn inside-map" href="https://ichi-fuji.jp/wp-content/uploads/2025/10/ichi_layout-1.pdf">館内図を見る</a>
       </div>

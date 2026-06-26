@@ -26,3 +26,48 @@ import Footer from '../components/Footer.astro';
     <Footer />
 	</body>
 </html>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+	const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const intro = gsap.timeline({
+    defaults: { ease: 'power2.out', duration: reduce ? 0 : 1.2 },
+  });
+  intro
+    .to('.hero', { opacity: 1 })
+    .from('.hero-img', { scale: 1.08, duration: reduce ? 0 : 1.6 }, 0)
+    .to('.header', { opacity: 1 }, reduce ? 0 : 0.4);
+
+  // 動きを減らす設定の人には適用しない
+  // 全体フェードイン
+gsap.utils.toArray<HTMLElement>('[data-fade]').forEach((el) => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 80%',
+    },
+  });
+});
+
+// Room / Food 画像のパララックス
+gsap.utils.toArray<HTMLImageElement>('.room-img, .food-img').forEach((img) => {
+  gsap.to(img, {
+    yPercent: -12,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: img,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  });
+});
+</script>

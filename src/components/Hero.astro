@@ -6,8 +6,8 @@ import hero02 from '../assets/images/item02.jpg';
 ---
 
 <section class="hero">
-  <Image class="hero-img hero-day" src={ hero01 } alt="" />
-  <Image class="hero-img hero-night" src={ hero02 } alt="" />
+  <Image class="hero-img hero-day" src={ hero01 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw" />
+  <Image class="hero-img hero-night" src={ hero02 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw" />
 </section>
 
 <style lang="scss">
@@ -18,6 +18,7 @@ import hero02 from '../assets/images/item02.jpg';
     position: relative;
     width: 100%;
     height: 100svh;
+    opacity: 0;
   }
 
   .hero-img {

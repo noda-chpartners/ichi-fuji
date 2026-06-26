@@ -7,10 +7,10 @@ import item2 from '../assets/images/item09.jpg';
 
 <section class="section" id="foods">
   <div class="inner">
-    <div class="section-title">
+    <div class="section-title" data-fade>
       <h2 class="title">お食事</h2>
     </div>
-    <div class="food-description">
+    <div class="food-description" data-fade>
       <p class="description">
         旅の時間に、もうひとつの楽しみを。
       </p>
@@ -22,9 +22,9 @@ import item2 from '../assets/images/item09.jpg';
     </div>
     <div class="content-area">
       <ul class="foods-list">
-        <li class="food-item">
+        <li class="food-item" data-fade>
           <figure class="food-img-wrap">
-            <Image class="food-img" src={ item1 } alt="" />
+            <Image class="food-img" src={ item1 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
           </figure>
           <h3 class="food-title">ICHIの特別すき焼き</h3>
           <p class="food-text">
@@ -34,9 +34,9 @@ import item2 from '../assets/images/item09.jpg';
           </p>
           <small class="caution">※事前予約制</small>
         </li>
-        <li class="food-item">
+        <li class="food-item" data-fade>
           <figure class="food-img-wrap">
-            <Image class="food-img" src={ item2 } alt="" />
+            <Image class="food-img" src={ item2 } alt="" widths={[768, 1280, 1920, 2560]} sizes="100vw"  />
           </figure>
           <h3 class="food-title">ICHIのオリジナル朝食</h3>
           <p class="food-text">
@@ -47,7 +47,7 @@ import item2 from '../assets/images/item09.jpg';
           <small class="caution">※事前予約制</small>
         </li>
       </ul>
-      <a href="https://ichi-fuji.jp/food/" class="btn view-more" target="_blank">お食事について詳しく見る</a>
+      <a href="https://ichi-fuji.jp/food/" class="btn view-more" target="_blank" data-fade>お食事について詳しく見る</a>
     </div>
   </div>
 </section>
