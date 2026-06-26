@@ -29,7 +29,7 @@ import item2 from '../assets/images/item09.jpg';
           <h3 class="food-title">ICHIの特別すき焼き</h3>
           <p class="food-text">
             山梨の名店“紅梅や”と届ける、旅先のごちそう。
-            <br />
+            <br class="break"/>
             家族みんなで鍋を囲む、あたたかな夕食時間を。
           </p>
           <small class="caution">※事前予約制</small>
@@ -107,6 +107,12 @@ import item2 from '../assets/images/item09.jpg';
   @include tab4 {
     .food-description {
       text-align: left;
+    }
+  }
+
+  @include sp {
+    .break {
+      display: none;
     }
   }
 </style>
