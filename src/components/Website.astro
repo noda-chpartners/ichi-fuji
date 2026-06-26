@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="web" id="web">
+  <a class="web-link" href="https://ichi-fuji.jp/" target="_blank" data-fade>
+    <div class="web-title" data-fade>
+      <Icon class="web-icon" name="material-symbols-light:globe" />
+      <h2 class="title">公式ホームページ</h2>
+    </div>
+  </a>
+</section>
+
+<!---------------------------- styles --------------------------------->
+
+
+<style lang="scss">
+  @use '../styles/variables' as *;
+  @use '../styles/mixins' as *;
+
+  .web {
+    padding: 0 5.66% 10px;
+    transition: all 0.3s ease;
+  }
+
+  .web:hover {
+    opacity: 0.7;
+  }
+
+  .web-link {
+    margin: 0 auto;
+    padding: 0 10% 0;
+  }
+
+  .web-link:hover {
+
+  }
+
+  .web-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    gap: 2%;
+    background-color: #ffffff;
+    font-weight: 700;
+  }
+
+  .web-icon {
+    width: 30px;
+    height: 30px;
+  }
+</style>
