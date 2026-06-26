@@ -136,7 +136,7 @@ import Logo from '../assets/images/logo02.svg';
     height: 1px;
     margin: 0 auto;
     background-color: #ffffff;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .is-open .hamburger-line:nth-child(1) {
@@ -146,6 +146,10 @@ import Logo from '../assets/images/logo02.svg';
 
   .is-open .hamburger-line:nth-child(2) {
     transform: translateY(-5px) rotate(-20deg);
+    background-color: $text-c;
+  }
+
+  .hamburger-btn.is-dark .hamburger-line {
     background-color: $text-c;
   }
 

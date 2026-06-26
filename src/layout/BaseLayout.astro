@@ -37,6 +37,12 @@ import Footer from '../components/Footer.astro';
   const intro = gsap.timeline({
     defaults: { ease: 'power2.out', duration: reduce ? 0 : 1.2 },
   });
+	ScrollTrigger.create({
+    trigger: '#concept',
+    start: 'top top',
+    end: 'max',
+    toggleClass: { targets: '.hamburger-btn', className: 'is-dark' },
+  });
   intro
     .to('.hero', { opacity: 1 })
     .from('.hero-img', { scale: 1.08, duration: reduce ? 0 : 1.6 }, 0)
