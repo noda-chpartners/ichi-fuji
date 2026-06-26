@@ -13,10 +13,47 @@ import Footer from '../components/Footer.astro';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>ICHI 緑 | 一棟貸切古民家</title>
+		<meta name="description" content="富士山を望む一棟貸切古民家「ICHI 緑」。動物同伴可。家族みんなで過ごせる宿泊施設です。" />
+		<link rel="canonical" href="https://ichi-fuji.pages.dev/" />
+
+		<meta property="og:site_name" content="ICHI 緑" />
+  	<meta property="og:title" content="ICHI 緑 | 一棟貸切古民家" />
+  	<meta property="og:description" content="富士山を望む一棟貸切古民家「ICHI 緑」。動物同伴可。家族みんなで過ごせる宿泊施設です。" />
+  	<meta property="og:type" content="website" />
+  	<meta property="og:url" content="https://ichi-fuji.pages.dev/" />
+  	<meta property="og:image" content="https://ichi-fuji.pages.dev/ogp.png" />
+  	<meta property="og:locale" content="ja_JP" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:title" content="ICHI 緑 | 一棟貸切古民家" />
+  	<meta name="twitter:description" content="富士山を望む一棟貸切古民家「ICHI 緑」。動物同伴可。家族みんなで過ごせる宿泊施設です。" />
+  	<meta name="twitter:image" content="https://ichi-fuji.pages.dev/ogp.png" />
+
+		<meta name="theme-color" content="#f7f1ea" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LodgingBusiness",
+				"name": "ICHI 緑",
+				"description": "富士山を望む一棟貸切古民家。動物同伴可。",
+				"url": "https://example.com/",
+				"telephone": "090-2507-2236",
+				"image": "https://example.com/ogp.png",
+				"address": {
+					"@type": "PostalAddress",
+					"postalCode": "401-0305",
+					"addressRegion": "山梨県",
+					"addressLocality": "南都留郡富士河口湖町",
+					"streetAddress": "大石1473-1",
+					"addressCountry": "JP"
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<Header />
