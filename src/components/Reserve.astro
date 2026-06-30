@@ -1,10 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-
+<section class="reserve-pet">
+  <a href="" class="reserve-pet-link">
+    <h2 class="title">※ペット同伴者様は、事前確認をお願いいたします。</h2>
+  </a>
+</section>
 <section class="reserve" id="reserve">
-  <a class="reserve-link" href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" data-reserve-trigger target="_blank" data-fade rel="noopener noreferrer"
-  >
+  <a class="reserve-link" href="https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do" data-reserve-trigger target="_blank" data-fade rel="noopener noreferrer">
     <div class="reserve-title" data-fade>
       <Icon class="reserve-icon" name="mdi:calendar" />
       <h2 class="title">ご予約はこちら</h2>
@@ -17,6 +20,16 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
   @use '../styles/variables' as *;
   @use '../styles/mixins' as *;
+
+  .reserve-pet {
+    display: inline-block;
+    padding: 10px 5.66% 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 
   .reserve {
     margin: 0 auto;
