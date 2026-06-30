@@ -1,9 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<section class="reserve-pet">
+<section class="reserve-pet" data-fade>
   <a href="" class="reserve-pet-link">
-    <h2 class="title">※ペット同伴者様は、事前確認をお願いいたします。</h2>
+    <h2 class="title">※ペット同伴者様は、こちらのリンクから事前確認をお願いいたします。</h2>
+    <Icon class="reserve-pet-icon" name="mdi:external-link" />
   </a>
 </section>
 <section class="reserve" id="reserve">
@@ -24,11 +25,21 @@ import { Icon } from 'astro-icon/components';
   .reserve-pet {
     display: inline-block;
     padding: 10px 5.66% 0;
+  }
+
+  .reserve-pet-link {
+    display: flex;
+    align-items: center;
     transition: all 0.3s ease;
 
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  .reserve-pet-icon {
+    width: 15px;
+    height: 15px;
   }
 
   .reserve {
