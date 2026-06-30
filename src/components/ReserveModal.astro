@@ -1,0 +1,179 @@
+---
+---
+<dialog class="reserve-modal" id="reserve-modal">
+  <div class="reserve-modal-inner">
+    <p class="reserve-modal-text">
+      ペット同伴での宿泊をご希望の方は、
+      <br />
+      事前確認ページをご確認ください。
+    </p>
+    <div class="reserve-modal-actions">
+      <a class="reserve-modal-link" href="https://ichi-fuji.jp/pet/" target="_blank" rel="noopener noreferrer">
+        ペット同伴の方
+        <br />
+        事前確認ページへ
+      </a>
+      <button type="button" class="reserve-modal-btn" data-reserve-confirm>
+        予約ページへ
+      </button>
+      <button type="button" class="reserve-modal-close" data-reserve-close>
+        閉じる
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<style lang="scss">
+  @use '../styles/variables' as *;
+  @use '../styles/mixins' as *;
+
+  .reserve-modal {
+    border: none;
+    padding: 0;
+    margin: auto;
+    max-width: calc(100% - 40px);
+    width: 100%;
+    background: transparent;
+    color: $text-c;
+
+    // ふわっと表示（閉じる時もアニメーション）
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      overlay 0.4s ease allow-discrete,
+      display 0.4s ease allow-discrete;
+  }
+
+  .reserve-modal[open] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @starting-style {
+    .reserve-modal[open] {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  .reserve-modal::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition:
+      opacity 0.4s ease,
+      overlay 0.4s ease allow-discrete,
+      display 0.4s ease allow-discrete;
+  }
+
+  .reserve-modal[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .reserve-modal[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  .reserve-modal-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    background-color: $base-c;
+    border: 1px solid $border-c;
+  }
+
+  .reserve-modal-text {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+    line-height: 2;
+    letter-spacing: 0.15em;
+  }
+
+  .reserve-modal-actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .reserve-modal-link,
+  .reserve-modal-btn {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    transition: opacity 0.3s ease;
+  }
+
+  .reserve-modal-link:hover,
+  .reserve-modal-btn:not(:disabled):hover {
+    opacity: 0.7;
+  }
+
+  .reserve-modal-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .reserve-modal-close {
+    margin-top: 8px;
+    color: $subtx-c;
+    letter-spacing: 0.15em;
+    transition: opacity 0.3s ease;
+  }
+
+  .reserve-modal-close:hover {
+    opacity: 0.7;
+  }
+
+  // 動きを減らす設定
+  @media (prefers-reduced-motion: reduce) {
+    .reserve-modal,
+    .reserve-modal::backdrop {
+      transition: none;
+    }
+  }
+
+  @include sp {
+    .reserve-modal-inner {
+      padding: 32px 20px;
+    }
+  }
+</style>
+
+<script>
+  const RESERVE_URL = 'https://ichi-fuji.rwiths.net/r-withs/tfi0010a.do';
+  const dialog = document.getElementById('reserve-modal') as HTMLDialogElement | null;
+  const agree = document.querySelector<HTMLInputElement>('[data-reserve-agree]');
+  const confirmBtn = document.querySelector<HTMLButtonElement>('[data-reserve-confirm]');
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-reserve-close]');
+
+  document.querySelectorAll('[data-reserve-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      dialog?.showModal();
+    });
+  });
+
+  agree?.addEventListener('change', () => {
+    if (confirmBtn) confirmBtn.disabled = !agree.checked;
+  });
+
+  confirmBtn?.addEventListener('click', () => {
+    window.open(RESERVE_URL, '_blank', 'noopener,noreferrer');
+    dialog?.close();
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    dialog?.close();
+  });
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>
